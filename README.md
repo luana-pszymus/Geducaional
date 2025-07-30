@@ -1,2 +1,2 @@
-# Geducaional
+# Geducacional
 gerenciador escolar
