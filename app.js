@@ -1,12 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const tarefaController = require("../controllers/tarefaController");
-const router = require("../routes/routes");
+const tarefaController = require("./controllers/tarefaController");
+const router = require("./routes/routes");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(router);
 app.get("/task", tarefaController.exibirTarefas);
