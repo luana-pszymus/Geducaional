@@ -22,11 +22,11 @@ exports.buscarLogin = async (req, res) => {
 exports.criarLogin = async (req, res) => {
   try {
     const novoLogin = await Login.create({
-      senha: req.body.senha, // obrigatório
-      autenticar: req.body.autenticar, // obrigatório (true/false)
-      usuario_registrado: req.body.usuario_registrado, // obrigatório (true/false)
-      redefinir_senha: req.body.redefinir_senha || null, // opcional
-      registrar_acesso: req.body.registrar_acesso || null, // opcional
+      senha: req.body.senha,
+      autenticar: req.body.autenticar,
+      usuario_registrado: req.body.usuario_registrado,
+      redefinir_senha: req.body.redefinir_senha || null,
+      registrar_acesso: req.body.registrar_acesso || null,
     });
 
     res.status(201).json(novoLogin);
@@ -68,7 +68,7 @@ exports.deletarLogin = async (req, res) => {
       return res.status(404).send("Login não encontrado");
     }
 
-    await login.destroy(); // deleta só este registro
+    await login.destroy();
     res.send("Login deletado com sucesso");
   } catch (err) {
     console.error("Erro ao deletar login:", err);
