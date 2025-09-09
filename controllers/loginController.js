@@ -1,4 +1,4 @@
-const Login = require("../models/login");
+const Login = require("../models/loginModel");
 
 exports.listarLogin = async (req, res) => {
   try {
